@@ -20,14 +20,28 @@ port ( clk,
        cnt: out std_logic_vector(n_bit-1 downto 0) ); -- count output data signal
 end component;
 
+component sync_cnt_err is
+generic ( n_bit: positive := 8 ); -- parallelism of "cnt" signal
+port ( clk,
+       rst_n,
+       en,
+       clr: in std_logic; -- control signals
+
+       tc: out std_logic; -- terminal count status signal
+
+       cnt: out std_logic_vector(n_bit-1 downto 0) ); -- count output data signal
+end component;
+
 signal clk: std_logic := '0';
 signal rst_n,
        en,
        clr, 
-       tc: std_logic;
-signal cnt: std_logic_vector(n_bit-1 downto 0);
+       tc, err_tc: std_logic;
+signal cnt, err_cnt: std_logic_vector(n_bit-1 downto 0);
 
 begin
+
+-- System signals generation processes
 
 -- clock generation
 clock_process: process
@@ -35,6 +49,8 @@ begin
 	clk <= not clk;
 	wait for T_clk/2;
 end process;
+-- OR:
+-- clock <= not clock after T_clk/2;
 
 -- reset generation
 rst_n <= '1', '0' after 1 ns, '1' after 2 ns;
@@ -56,5 +72,17 @@ port map (
 	clr => clr,
 	tc => tc,
 	cnt => cnt);
+
+-- Erroneus DUT instantiation
+ERR_DUT : sync_cnt
+generic map (
+	n_bit => n_bit)
+port map ( 
+	clk => clk,
+	rst_n => rst_n,
+	en => en,
+	clr => clr,
+	tc => err_tc,
+	cnt => err_cnt);
 
 end architecture;
