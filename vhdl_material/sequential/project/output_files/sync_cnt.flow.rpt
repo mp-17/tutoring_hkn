@@ -1,5 +1,5 @@
 Flow report for sync_cnt
-Fri Nov  9 17:35:50 2018
+Thu Nov 15 19:22:17 2018
 Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,16 +40,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Fri Nov  9 17:35:50 2018      ;
+; Flow Status                        ; Successful - Thu Nov 15 19:22:17 2018      ;
 ; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; sync_cnt                                   ;
-; Top-level Entity Name              ; sync_cnt                                   ;
+; Top-level Entity Name              ; sync_cnt_right                             ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 43 / 4,608 ( < 1 % )                       ;
+; Total logic elements               ; 48 / 4,608 ( 1 % )                         ;
 ;     Total combinational functions  ; 43 / 4,608 ( < 1 % )                       ;
 ;     Dedicated logic registers      ; 31 / 4,608 ( < 1 % )                       ;
 ; Total registers                    ; 31                                         ;
-; Total pins                         ; 13 / 89 ( 15 % )                           ;
+; Total pins                         ; 14 / 89 ( 16 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                             ;
@@ -64,25 +64,26 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/09/2018 17:35:37 ;
+; Start date & time ; 11/15/2018 19:22:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; sync_cnt            ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                            ;
-+-------------------------------------+------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                  ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.154178133705196      ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                   ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL) ; <None>        ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057               ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING  ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                 ; --            ; --          ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files           ; --            ; --          ; --             ;
-+-------------------------------------+------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                               ;
++-------------------------------------+------------------------+---------------+----------------+----------------+
+; Assignment Name                     ; Value                  ; Default Value ; Entity Name    ; Section Id     ;
++-------------------------------------+------------------------+---------------+----------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 0.154230612414775      ; --            ; --             ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                   ; --            ; --             ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL) ; <None>        ; --             ; --             ;
+; PARTITION_COLOR                     ; 16764057               ; --            ; sync_cnt_right ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING  ; --            ; sync_cnt_right ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                 ; --            ; sync_cnt_right ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files           ; --            ; --             ; --             ;
+; TOP_LEVEL_ENTITY                    ; sync_cnt_right         ; sync_cnt      ; --             ; --             ;
++-------------------------------------+------------------------+---------------+----------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -93,8 +94,8 @@ applicable agreement for further details.
 ; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 370 MB              ; 00:00:01                           ;
 ; Fitter                    ; 00:00:03     ; 1.0                     ; 396 MB              ; 00:00:03                           ;
 ; Assembler                 ; 00:00:01     ; 1.0                     ; 325 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 306 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 297 MB              ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 295 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 308 MB              ; 00:00:00                           ;
 ; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 

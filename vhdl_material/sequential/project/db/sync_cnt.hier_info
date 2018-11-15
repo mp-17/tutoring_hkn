@@ -1,4 +1,4 @@
-|sync_cnt
+|sync_cnt_right
 clk => \counting_process:cnt_var[0].CLK
 clk => \counting_process:cnt_var[1].CLK
 clk => \counting_process:cnt_var[2].CLK
@@ -30,7 +30,37 @@ clk => \counting_process:cnt_var[27].CLK
 clk => \counting_process:cnt_var[28].CLK
 clk => \counting_process:cnt_var[29].CLK
 clk => \counting_process:cnt_var[30].CLK
-rst_n => \counting_process:cnt_var[7].IN1
+rst_n => \counting_process:cnt_var[0].ACLR
+rst_n => \counting_process:cnt_var[1].ACLR
+rst_n => \counting_process:cnt_var[2].ACLR
+rst_n => \counting_process:cnt_var[3].ACLR
+rst_n => \counting_process:cnt_var[4].ACLR
+rst_n => \counting_process:cnt_var[5].ACLR
+rst_n => \counting_process:cnt_var[6].ACLR
+rst_n => \counting_process:cnt_var[7].ACLR
+rst_n => \counting_process:cnt_var[8].ACLR
+rst_n => \counting_process:cnt_var[9].ACLR
+rst_n => \counting_process:cnt_var[10].ACLR
+rst_n => \counting_process:cnt_var[11].ACLR
+rst_n => \counting_process:cnt_var[12].ACLR
+rst_n => \counting_process:cnt_var[13].ACLR
+rst_n => \counting_process:cnt_var[14].ACLR
+rst_n => \counting_process:cnt_var[15].ACLR
+rst_n => \counting_process:cnt_var[16].ACLR
+rst_n => \counting_process:cnt_var[17].ACLR
+rst_n => \counting_process:cnt_var[18].ACLR
+rst_n => \counting_process:cnt_var[19].ACLR
+rst_n => \counting_process:cnt_var[20].ACLR
+rst_n => \counting_process:cnt_var[21].ACLR
+rst_n => \counting_process:cnt_var[22].ACLR
+rst_n => \counting_process:cnt_var[23].ACLR
+rst_n => \counting_process:cnt_var[24].ACLR
+rst_n => \counting_process:cnt_var[25].ACLR
+rst_n => \counting_process:cnt_var[26].ACLR
+rst_n => \counting_process:cnt_var[27].ACLR
+rst_n => \counting_process:cnt_var[28].ACLR
+rst_n => \counting_process:cnt_var[29].ACLR
+rst_n => \counting_process:cnt_var[30].ACLR
 en => cnt_var.OUTPUTSELECT
 en => cnt_var.OUTPUTSELECT
 en => cnt_var.OUTPUTSELECT
@@ -93,14 +123,15 @@ clr => cnt_var.OUTPUTSELECT
 clr => cnt_var.OUTPUTSELECT
 clr => cnt_var.OUTPUTSELECT
 clr => cnt_var.OUTPUTSELECT
-tc <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-cnt[0] <= \counting_process:cnt_var[0].DB_MAX_OUTPUT_PORT_TYPE
-cnt[1] <= \counting_process:cnt_var[1].DB_MAX_OUTPUT_PORT_TYPE
-cnt[2] <= \counting_process:cnt_var[2].DB_MAX_OUTPUT_PORT_TYPE
-cnt[3] <= \counting_process:cnt_var[3].DB_MAX_OUTPUT_PORT_TYPE
-cnt[4] <= \counting_process:cnt_var[4].DB_MAX_OUTPUT_PORT_TYPE
-cnt[5] <= \counting_process:cnt_var[5].DB_MAX_OUTPUT_PORT_TYPE
-cnt[6] <= \counting_process:cnt_var[6].DB_MAX_OUTPUT_PORT_TYPE
-cnt[7] <= \counting_process:cnt_var[7].DB_MAX_OUTPUT_PORT_TYPE
+tc <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+cnt[0] << \counting_process:cnt_var[0].DB_MAX_OUTPUT_PORT_TYPE
+cnt[1] << \counting_process:cnt_var[1].DB_MAX_OUTPUT_PORT_TYPE
+cnt[2] << \counting_process:cnt_var[2].DB_MAX_OUTPUT_PORT_TYPE
+cnt[3] << \counting_process:cnt_var[3].DB_MAX_OUTPUT_PORT_TYPE
+cnt[4] << \counting_process:cnt_var[4].DB_MAX_OUTPUT_PORT_TYPE
+cnt[5] << \counting_process:cnt_var[5].DB_MAX_OUTPUT_PORT_TYPE
+cnt[6] << \counting_process:cnt_var[6].DB_MAX_OUTPUT_PORT_TYPE
+cnt[7] << \counting_process:cnt_var[7].DB_MAX_OUTPUT_PORT_TYPE
+cnt[8] << \counting_process:cnt_var[8].DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -32,12 +32,24 @@ port ( clk,
        cnt: out std_logic_vector(n_bit-1 downto 0) ); -- count output data signal
 end component;
 
+component sync_cnt_right is
+generic ( n_bit: positive := 9 ); -- parallelism of "cnt" signal
+port ( clk,
+       rst_n,
+       en,
+       clr: in std_logic; -- control signals
+
+       tc: out std_logic; -- terminal count status signal
+
+       cnt: out std_logic_vector(n_bit-1 downto 0) ); -- count output data signal
+end component;
+
 signal clk: std_logic := '0';
 signal rst_n,
        en,
        clr, 
-       tc, err_tc: std_logic;
-signal cnt, err_cnt: std_logic_vector(n_bit-1 downto 0);
+       tc, err_tc, right_tc: std_logic;
+signal cnt, err_cnt, right_cnt: std_logic_vector(n_bit-1 downto 0);
 
 begin
 
@@ -84,5 +96,17 @@ port map (
 	clr => clr,
 	tc => err_tc,
 	cnt => err_cnt);
+
+-- Right DUT instantiation
+RIGHT_DUT : sync_cnt_right
+generic map (
+	n_bit => n_bit)
+port map ( 
+	clk => clk,
+	rst_n => rst_n,
+	en => en,
+	clr => clr,
+	tc => right_tc,
+	cnt => right_cnt);
 
 end architecture;

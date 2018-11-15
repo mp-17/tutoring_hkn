@@ -2,7 +2,39 @@
 # Compile of sync_cnt.vhd was successful.
 # Compile of sync_cnt_tb.vhd was successful.
 # Compile of sync_cnt_err.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
+# Compile of sync_cnt_right.vhd failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors. 
+# Compile of sync_cnt.vhd was successful.
+# Compile of sync_cnt_tb.vhd was successful.
+# Compile of sync_cnt_err.vhd was successful.
+# Compile of sync_cnt_right.vhd failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors. 
+# Compile of sync_cnt.vhd was successful.
+# Compile of sync_cnt_tb.vhd was successful.
+# Compile of sync_cnt_err.vhd was successful.
+# Compile of sync_cnt_right.vhd failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors. 
+# Compile of sync_cnt.vhd was successful.
+# Compile of sync_cnt_tb.vhd was successful.
+# Compile of sync_cnt_err.vhd was successful.
+# Compile of sync_cnt_right.vhd was successful with warnings.
+# 4 compiles, 0 failed with no errors. 
+# Compile of sync_cnt.vhd was successful.
+# Compile of sync_cnt_tb.vhd was successful.
+# Compile of sync_cnt_err.vhd was successful.
+# Compile of sync_cnt_right.vhd was successful.
+# 4 compiles, 0 failed with no errors. 
+# Load canceled
+# Compile of sync_cnt.vhd was successful.
+# Compile of sync_cnt_tb.vhd failed with 1 errors.
+# Compile of sync_cnt_err.vhd was successful.
+# Compile of sync_cnt_right.vhd was successful.
+# 4 compiles, 1 failed with 1 error. 
+# Compile of sync_cnt.vhd was successful.
+# Compile of sync_cnt_tb.vhd was successful.
+# Compile of sync_cnt_err.vhd was successful.
+# Compile of sync_cnt_right.vhd was successful.
+# 4 compiles, 0 failed with no errors. 
 vsim work.sync_cnt_tb
 # vsim work.sync_cnt_tb 
 # Loading std.standard
@@ -13,32 +45,17 @@ vsim work.sync_cnt_tb
 # Loading work.sync_cnt(behaviour)
 # Loading work.sync_cnt_err(behaviour)
 # WARNING: No extended dataflow license exists
-add wave -position insertpoint  \
-sim:/sync_cnt_tb/rst_n \
-sim:/sync_cnt_tb/en \
-sim:/sync_cnt_tb/clr \
-sim:/sync_cnt_tb/tc \
-sim:/sync_cnt_tb/err_tc \
-sim:/sync_cnt_tb/cnt \
-sim:/sync_cnt_tb/err_cnt
-run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 1 ns  Iteration: 0  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 1 ns  Iteration: 0  Instance: /sync_cnt_tb/ERR_DUT
 quit -sim
+# Compile of sync_cnt.vhd was successful.
+# Compile of sync_cnt_tb.vhd failed with 1 errors.
+# Compile of sync_cnt_err.vhd was successful.
+# Compile of sync_cnt_right.vhd was successful.
+# 4 compiles, 1 failed with 1 error. 
 # Compile of sync_cnt.vhd was successful.
 # Compile of sync_cnt_tb.vhd was successful.
 # Compile of sync_cnt_err.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
+# Compile of sync_cnt_right.vhd was successful.
+# 4 compiles, 0 failed with no errors. 
 vsim work.sync_cnt_tb
 # vsim work.sync_cnt_tb 
 # Loading std.standard
@@ -48,6 +65,35 @@ vsim work.sync_cnt_tb
 # Loading ieee.numeric_std(body)
 # Loading work.sync_cnt(behaviour)
 # Loading work.sync_cnt_err(behaviour)
+# ** Warning: (vsim-3473) Component instance "RIGHT_DUT : sync_cnt_right" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /sync_cnt_tb File: /home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/sync_cnt_tb/en \
+sim:/sync_cnt_tb/clr \
+sim:/sync_cnt_tb/tc \
+sim:/sync_cnt_tb/err_tc \
+sim:/sync_cnt_tb/right_tc \
+sim:/sync_cnt_tb/cnt \
+sim:/sync_cnt_tb/err_cnt \
+sim:/sync_cnt_tb/right_cnt
+run
+quit -sim
+# Compile of sync_cnt.vhd was successful.
+# Compile of sync_cnt_tb.vhd was successful.
+# Compile of sync_cnt_err.vhd was successful.
+# Compile of sync_cnt_right.vhd was successful.
+# 4 compiles, 0 failed with no errors. 
+vsim work.sync_cnt_tb
+# vsim work.sync_cnt_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.sync_cnt_tb(beh)
+# Loading ieee.numeric_std(body)
+# Loading work.sync_cnt(behaviour)
+# Loading work.sync_cnt_err(behaviour)
+# Loading work.sync_cnt_right(behaviour)
 # WARNING: No extended dataflow license exists
 add wave -position insertpoint  \
 sim:/sync_cnt_tb/clk \
@@ -56,26 +102,36 @@ sim:/sync_cnt_tb/en \
 sim:/sync_cnt_tb/clr \
 sim:/sync_cnt_tb/tc \
 sim:/sync_cnt_tb/err_tc \
+sim:/sync_cnt_tb/right_tc \
 sim:/sync_cnt_tb/cnt \
-sim:/sync_cnt_tb/err_cnt
+sim:/sync_cnt_tb/err_cnt \
+sim:/sync_cnt_tb/right_cnt
 run
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 1 ns  Iteration: 0  Instance: /sync_cnt_tb/ERR_DUT
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 1 ns  Iteration: 0  Instance: /sync_cnt_tb/ERR_DUT
+restart
+add wave -position insertpoint  \
+sim:/sync_cnt_tb/RIGHT_DUT/tc \
+sim:/sync_cnt_tb/RIGHT_DUT/cnt \
+sim:/sync_cnt_tb/RIGHT_DUT/cnt_max_signal
+run
+restart
+add wave -position insertpoint  \
+sim:/sync_cnt_tb/clk \
+sim:/sync_cnt_tb/rst_n \
+sim:/sync_cnt_tb/en \
+sim:/sync_cnt_tb/clr \
+sim:/sync_cnt_tb/tc \
+sim:/sync_cnt_tb/err_tc \
+sim:/sync_cnt_tb/right_tc \
+sim:/sync_cnt_tb/cnt \
+sim:/sync_cnt_tb/err_cnt \
+sim:/sync_cnt_tb/right_cnt
+run
 quit -sim
 # Compile of sync_cnt.vhd was successful.
 # Compile of sync_cnt_tb.vhd was successful.
 # Compile of sync_cnt_err.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
+# Compile of sync_cnt_right.vhd was successful.
+# 4 compiles, 0 failed with no errors. 
 vsim work.sync_cnt_tb
 # vsim work.sync_cnt_tb 
 # Loading std.standard
@@ -85,6 +141,7 @@ vsim work.sync_cnt_tb
 # Loading ieee.numeric_std(body)
 # Loading work.sync_cnt(behaviour)
 # Loading work.sync_cnt_err(behaviour)
+# Loading work.sync_cnt_right(behaviour)
 # WARNING: No extended dataflow license exists
 add wave -position insertpoint  \
 sim:/sync_cnt_tb/clk \
@@ -93,56 +150,8 @@ sim:/sync_cnt_tb/en \
 sim:/sync_cnt_tb/clr \
 sim:/sync_cnt_tb/tc \
 sim:/sync_cnt_tb/err_tc \
+sim:/sync_cnt_tb/right_tc \
 sim:/sync_cnt_tb/cnt \
-sim:/sync_cnt_tb/err_cnt
-run
-quit -sim
-# Compile of sync_cnt.vhd was successful.
-# Compile of sync_cnt_tb.vhd was successful.
-# Compile of sync_cnt_err.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
-vsim work.sync_cnt_tb
-# vsim work.sync_cnt_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.sync_cnt_tb(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.sync_cnt(behaviour)
-# Loading work.sync_cnt_err(behaviour)
-# WARNING: No extended dataflow license exists
-add wave -position insertpoint  \
-sim:/sync_cnt_tb/clk \
-sim:/sync_cnt_tb/rst_n \
-sim:/sync_cnt_tb/en \
-sim:/sync_cnt_tb/clr \
-sim:/sync_cnt_tb/tc \
-sim:/sync_cnt_tb/err_tc \
-sim:/sync_cnt_tb/cnt \
-sim:/sync_cnt_tb/err_cnt
-run
-quit -sim
-# Compile of sync_cnt.vhd was successful.
-# Compile of sync_cnt_tb.vhd was successful.
-# Compile of sync_cnt_err.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
-vsim work.sync_cnt_tb
-# vsim work.sync_cnt_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.sync_cnt_tb(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.sync_cnt(behaviour)
-# Loading work.sync_cnt_err(behaviour)
-# WARNING: No extended dataflow license exists
-add wave -position insertpoint  \
-sim:/sync_cnt_tb/clk \
-sim:/sync_cnt_tb/rst_n \
-sim:/sync_cnt_tb/en \
-sim:/sync_cnt_tb/clr \
-sim:/sync_cnt_tb/tc \
-sim:/sync_cnt_tb/err_tc \
-sim:/sync_cnt_tb/cnt \
-sim:/sync_cnt_tb/err_cnt
+sim:/sync_cnt_tb/err_cnt \
+sim:/sync_cnt_tb/right_cnt
 run
