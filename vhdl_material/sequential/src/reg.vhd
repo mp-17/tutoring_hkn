@@ -28,7 +28,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity reg is
-	generic ( n_bit: integer := 8 ); -- the parallelism of the signal lines
+	generic ( n_bit: positive := 8 ); -- the parallelism of the signal lines
 	port ( clk,
 		   rst_n,
 	       en,

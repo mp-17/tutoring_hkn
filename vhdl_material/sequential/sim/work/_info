@@ -4,7 +4,7 @@ K3
 cModel Technology
 d/home/matteo
 Esync_cnt
-Z0 w1541714835
+Z0 w1542303950
 Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
@@ -13,25 +13,24 @@ Z5 8/home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt.vhd
 Z6 F/home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt.vhd
 l0
 L29
-V4RYC_8GUMd7Bem4cT6ijO3
+V?nV@b0Z6_[V;;UL><7NHX1
 Z7 OV;C;10.1d;51
 32
-Z8 !s108 1541716774.844312
+Z8 !s108 1542303985.775175
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt.vhd|
 Z10 !s107 /home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt.vhd|
 Z11 o-work work -2002 -explicit -O0
 Z12 tExplicit 1
-!s100 I[S3J8dBYifnjT<D_=<;`3
+!s100 1DZ>:Q?z8MDF6PcN@<T5B2
 !i10b 1
 Abehaviour
 R1
 R2
 R3
-DEx4 work 8 sync_cnt 0 22 4RYC_8GUMd7Bem4cT6ijO3
+DEx4 work 8 sync_cnt 0 22 ?nV@b0Z6_[V;;UL><7NHX1
 l42
 L41
-VeK9SM;egn=M_W^3W8BbK12
-!s100 d^UB;X`zO=P1ThZ6gin5G3
+Vl``JcU1LcR?L??amTbVjz0
 R7
 32
 R8
@@ -39,34 +38,37 @@ R9
 R10
 R11
 R12
+!s100 =m7b9d?W8YKH=^E0j688i0
 !i10b 1
-Esync_cnt_tb
-Z13 w1541716730
+Esync_cnt_err
+Z13 w1542303977
+R1
 R2
 R3
 R4
-Z14 8/home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd
-Z15 F/home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd
+Z14 8/home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt_err.vhd
+Z15 F/home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt_err.vhd
 l0
-L4
-V[XC=D`dD<k;YklPcAkL373
-!s100 RBDGf9IhYR121lhFg@j2X0
+L29
+VFCESn9=YQ<fj^W^>C6[UG0
+!s100 ?;NJ4@4_[M0O2`<h4TfJ`2
 R7
 32
 !i10b 1
-Z16 !s108 1541716774.870865
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd|
-Z18 !s107 /home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd|
+Z16 !s108 1542303985.822772
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt_err.vhd|
+Z18 !s107 /home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt_err.vhd|
 R11
 R12
-Abeh
+Abehaviour
+R1
 R2
 R3
-Z19 DEx4 work 11 sync_cnt_tb 0 22 [XC=D`dD<k;YklPcAkL373
-l30
-L9
-Va9a61dfoF=_D`Wl;P9k4U2
-!s100 nL?=@kfQE4ncYI5J94mjd3
+Z19 DEx4 work 12 sync_cnt_err 0 22 FCESn9=YQ<fj^W^>C6[UG0
+l45
+L41
+VJ[;nWA`WbNE3lo6<K5]V[3
+!s100 `a]PARBFl^1AjhGen7l_C1
 R7
 32
 !i10b 1
@@ -75,3 +77,38 @@ R17
 R18
 R11
 R12
+Esync_cnt_tb
+Z20 w1542303245
+R2
+R3
+R4
+Z21 8/home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd
+Z22 F/home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd
+l0
+L4
+V[e5mP5GD1nS]bD^;4629F0
+R7
+32
+Z23 !s108 1542303985.802152
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd|
+Z25 !s107 /home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd|
+R11
+R12
+!s100 cSW?BcNW@zGa9d_:eXM0A0
+!i10b 1
+Abeh
+R2
+R3
+DEx4 work 11 sync_cnt_tb 0 22 [e5mP5GD1nS]bD^;4629F0
+l42
+L9
+VWcU<`mFFVPX0c_Q3_Pb041
+!s100 k?z^Y8g]UmL:WO3CEklHi0
+R7
+32
+R23
+R24
+R25
+R11
+R12
+!i10b 1

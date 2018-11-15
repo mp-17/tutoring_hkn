@@ -1,4 +1,5 @@
 vendor_name = ModelSim
+source_file = 1, /home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt_err.vhd
 source_file = 1, /home/matteo/git/tutoring_hkn/vhdl_material/sequential/tb/sync_cnt_tb.vhd
 source_file = 1, /home/matteo/git/tutoring_hkn/vhdl_material/sequential/src/sync_cnt.vhd
 source_file = 1, /home/matteo/git/tutoring_hkn/vhdl_material/sequential/project/db/sync_cnt.cbx.xml

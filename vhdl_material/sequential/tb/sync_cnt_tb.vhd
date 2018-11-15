@@ -3,13 +3,13 @@ use ieee.std_logic_1164.all;
 
 entity sync_cnt_tb is
 	generic ( T_clk: time := 20 ns;   -- 50 MHz default clock
-	          n_bit: positive := 8 ); -- parallelism of the counter
+	          n_bit: positive := 9 ); -- parallelism of the counter
 end entity;
 
 architecture beh of sync_cnt_tb is
 
 component sync_cnt is
-generic ( n_bit: positive := 8 ); -- parallelism of "cnt" signal
+generic ( n_bit: positive := 9 ); -- parallelism of "cnt" signal
 port ( clk,
        rst_n,
        en,
@@ -21,7 +21,7 @@ port ( clk,
 end component;
 
 component sync_cnt_err is
-generic ( n_bit: positive := 8 ); -- parallelism of "cnt" signal
+generic ( n_bit: positive := 9 ); -- parallelism of "cnt" signal
 port ( clk,
        rst_n,
        en,
@@ -74,7 +74,7 @@ port map (
 	cnt => cnt);
 
 -- Erroneus DUT instantiation
-ERR_DUT : sync_cnt
+ERR_DUT : sync_cnt_err
 generic map (
 	n_bit => n_bit)
 port map ( 

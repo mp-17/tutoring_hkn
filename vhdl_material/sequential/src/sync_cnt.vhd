@@ -27,7 +27,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity sync_cnt is
-generic ( n_bit: positive := 8 ); -- parallelism of "cnt" signal
+generic ( n_bit: positive := 9 ); -- parallelism of "cnt" signal
 port ( clk,
        rst_n,
        en,
@@ -42,27 +42,27 @@ architecture behaviour of sync_cnt is
 begin
 	counting_process: process(clk, rst_n) 
 	variable cnt_var: natural := 0;
-	variable cnt_max: natural := (2**n_bit) - 1;
+	variable cnt_max: natural := (2**(n_bit-1)) - 1;
 	begin
 		-- reset, clear and count flow
 		if (rst_n = '0') then
+			tc <= '0';
 			cnt_var := 0;
 		elsif (clk'event and clk = '1') then
+			tc <= '0';
 			if (clr = '1') then
 				cnt_var := 0;
 			elsif (en = '1') then
 				cnt_var := cnt_var + 1;
+				-- clear-from-overflow check
+				if (cnt_var > cnt_max) then
+					cnt_var := 0;
+				end if;
+		        -- terminal count check
+				if (cnt_var = cnt_max) then
+					tc <= '1';
+				end if;
 			end if;
-		end if;
-		-- clear-from-overflow check
-		if (cnt_var > cnt_max) then
-			cnt_var := 0;
-		end if;
-		-- terminal count check
-		if (cnt_var = cnt_max) then
-			tc <= '1';
-		else
-			tc <= '0';
 		end if;
 		-- variable-to-signal assignments
 		cnt <= std_logic_vector(to_unsigned(cnt_var, n_bit));
