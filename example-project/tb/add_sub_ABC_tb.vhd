@@ -129,15 +129,15 @@ begin
     device: add_sub_ABC generic map (bit_n) port map (clock, add_sub_ABC_rst_n, add_sub_ABC_start, sign_freader_data(0), A_freader_data, B_freader_data, C_freader_data, add_sub_ABC_data_ready, open, add_sub_ABC_out);
 
     -- Input files readers
-    A_freader: text_in generic map (bit_n) port map (clock, AB_freader_enable, "A.txt", A_freader_data, A_freader_done);
-    B_freader: text_in generic map (bit_n) port map (clock, AB_freader_enable, "B.txt", B_freader_data, B_freader_done);
-    C_freader: text_in generic map (bit_n) port map (clock, C_freader_enable, "C.txt", C_freader_data, C_freader_done);
-    sign_freader: text_in generic map (1) port map (clock, sign_freader_enable, "sign.txt", sign_freader_data, sign_freader_done);
+    A_freader: text_in generic map (bit_n) port map (clock, AB_freader_enable, "../common/A.txt", A_freader_data, A_freader_done);
+    B_freader: text_in generic map (bit_n) port map (clock, AB_freader_enable, "../common/B.txt", B_freader_data, B_freader_done);
+    C_freader: text_in generic map (bit_n) port map (clock, C_freader_enable, "../common/C.txt", C_freader_data, C_freader_done);
+    sign_freader: text_in generic map (1) port map (clock, sign_freader_enable, "../common/sign.txt", sign_freader_data, sign_freader_done);
 
     -- Set this signal whenver a reader reaches the end of the input file
     freader_done <= sign_freader_done or A_freader_done or B_freader_done or C_freader_done;
 
     -- Output file writer
-    output_fwriter: text_out generic map (bit_n+1) port map (clock, fwriter_enable, "output.txt", add_sub_ABC_out);
+    output_fwriter: text_out generic map (bit_n+1) port map (clock, fwriter_enable, "../common/output.txt", add_sub_ABC_out);
 
 end architecture behaviour;

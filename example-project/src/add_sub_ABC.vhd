@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 ----------------------------------- INFO --------------------------------------
 -- EXAMPLE PROJECT FOR HKN TUTORING SESSIONS: add_sub_ABC.
--- This simple design... 
+-- This simple design 
 
 entity add_sub_ABC is
 	generic (
@@ -20,7 +20,7 @@ entity add_sub_ABC is
 				
 				-- signals to CU
 				start,
-				sign : in std_logic;
+				sign : in std_logic; -- This does not directly control the adder, but it's sampled by the CU first
 				
 				-- data to DP
 				A, 
@@ -38,7 +38,7 @@ end add_sub_ABC;
 
 architecture structure of add_sub_ABC is
 
-	component CU_add_sub_ABC is
+	component add_sub_ABC_CU is
 		port (
 			-- INPUTS
 				-- main signals
@@ -56,8 +56,8 @@ architecture structure of add_sub_ABC is
 				en_regB,
 				en_regC,
 				en_regSum,
-				rst_n_regs,
-				rst_n_regSum,
+				clr_regs,
+				clr_regSum,
 				sel : out std_logic; 
 				
 				-- to outside
@@ -65,14 +65,15 @@ architecture structure of add_sub_ABC is
 	      	);
 	end component;
 
-	component DP_add_sub_ABC is
+	component add_sub_ABC_DP is
 		generic ( n : integer := 3 );
 		port (
 				-- INPUTS
 				-- main signals
 				clk,
-				rst_n_regs,
-				rst_n_regSum,
+				rst_n,
+				clr_regs,
+				clr_regSum,
 				en_regA,
 				en_regB,
 				en_regC,
@@ -102,7 +103,7 @@ architecture structure of add_sub_ABC is
 	
 begin
 
-	CU : CU_add_sub_ABC 
+	CU : add_sub_ABC_CU 
 		port map 
 		(
 			clk => clk,
@@ -120,12 +121,13 @@ begin
 			done => done
 		);
 	 
-	DP : DP_add_sub_ABC 
+	DP : add_sub_ABC_DP 
 		generic map 
 			( n => nBit_in )
 	port map
 			(
 			clk => clk,
+			rst_n => rst_n
 			rst_n_regs => rst_n_regs,
 			rst_n_regSum => rst_n_regSum,
 			en_regA => en_regA,

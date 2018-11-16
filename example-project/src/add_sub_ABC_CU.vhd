@@ -25,8 +25,8 @@ entity add_sub_ABC_CU is
 		en_regB,
 		en_regC,
 		en_regSum,
-		rst_n_regs,
-		rst_n_regSum,
+		clr_regs,
+		clr_regSum,
 		sel : out std_logic; 
 		
 		-- to outside
@@ -114,8 +114,8 @@ begin
 	begin
 	
 		-- std assignments
-		rst_n_regSum <= '0';
-		rst_n_regs <= '1';
+		clr_regSum <= '0';
+		clr_regs <= '1';
 		en_regA <= '0';
 		en_regB <= '0';
 		en_regC <= '0';
@@ -126,32 +126,32 @@ begin
 	
 		-- specific assignments
 		case pres_state is
-			when RESET => rst_n_regs <= '0';
+			when RESET => clr_regs <= '0';
 		
-			when IDLE => rst_n_regSum <= '0';
+			when IDLE => clr_regSum <= '0';
 			
 			when ABCSV => en_regA <= '1';
 			              en_regB <= '1';
 			              en_regC <= '1';
 						  
-			when CSV_ACPR_SUM => en_regC <= '1';
-										en_regSum <= '1';
-										sub <= '0';
+			when CSV_ACPR_SUM => 	en_regC <= '1';
+									en_regSum <= '1';
+									sub <= '0';
 										 
-			when CSV_ACPR_SUB => en_regC <= '1';
-										 en_regSum <= '1';
-										 sub <= '1';
+			when CSV_ACPR_SUB => 	en_regC <= '1';
+									en_regSum <= '1';
+									sub <= '1';
 										  
-			when OUT0_BCPR_SUM => en_regSum <= '1';
-			                      sub <= '0';
-										 rst_n_regSum <= '1';
+			when OUT0_BCPR_SUM => 	en_regSum <= '1';
+			                      	sub <= '0';
+									-- clr_regSum <= '1';
 										 
-			when OUT0_BCPR_SUB => en_regSum <= '1';
-			                       sub <= '1';
-										  rst_n_regSum <= '1';
+			when OUT0_BCPR_SUB => 	en_regSum <= '1';
+			                       	sub <= '1';
+									-- clr_regSum <= '1';
 										  
-			when OUT1_DONE => done <= '1';
-			                  rst_n_regSum <= '1';
+			when OUT1_DONE => 	done <= '1';
+			                  	clr_regSum <= '1';
 			
 		end case;
 	end process;

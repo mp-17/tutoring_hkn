@@ -12,24 +12,25 @@ entity add_sub_ABC_DP is
 	generic ( n : integer := 3 );
 	port (
 		    -- INPUTS
-			   -- main signals
+			   	-- control signals
 				clk,
-				rst_n_regs,
-				rst_n_regSum,
-			   en_regA,
-			   en_regB,
-			   en_regC,
-			   en_regSum,
-			   sel,
-			   sub : in std_logic;
+				rst_n,
+				clr_regs,
+				clr_regSum,
+			   	en_regA,
+			   	en_regB,
+			   	en_regC,
+			   	en_regSum,
+			   	sel,
+			   	sub : in std_logic;
 			 
-			   -- data signals
+			   	-- data signals
 				A,
 				B,
 				C : in std_logic_vector(n-1 downto 0);
 				
-			 -- OUTPUTS
-			   data_out : out std_logic_vector(n downto 0)
+			-- OUTPUTS
+			   	data_out : out std_logic_vector(n downto 0)
 	      );
 end add_sub_ABC_DP;
 
@@ -42,7 +43,8 @@ architecture behaviour of add_sub_ABC_DP is
 		port ( 
 					clk,
 					en,
-					rst_n : in std_logic;
+					rst_n,
+					clr : in std_logic;
 
 					D : in std_logic_vector(n-1 downto 0);
 				
@@ -95,7 +97,8 @@ begin
 			( 
 				clk => clk,
 				en => en_regA,
-				rst_n => rst_n_regs,
+				rst_n => rst_n,
+				clr => clr_regs,
 				D => A,
 				Q => A_Q
 			);
@@ -107,7 +110,8 @@ begin
 		( 
 			clk => clk,
 			en => en_regB,
-			rst_n => rst_n_regs,
+			rst_n => rst_n,
+			clr => clr_regs,
 			D => B,
 			Q => B_Q
 			);
@@ -119,7 +123,8 @@ begin
 		( 
 			clk => clk,
 			en => en_regC,
-			rst_n => rst_n_regs,
+			rst_n => rst_n,
+			clr => clr_regs,
 			D => C,
 			Q => add1
 		);
@@ -156,7 +161,8 @@ begin
 		( 
 			clk => clk,
 			en => en_regSum,
-			rst_n => rst_n_regSum,
+			rst_n => rst_n,
+			clr => clr_regSum,
 			D => out_D,
 			Q => data_out
 		);
