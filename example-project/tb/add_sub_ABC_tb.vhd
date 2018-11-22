@@ -139,5 +139,4 @@ begin
 
     -- Output file writer
     output_fwriter: text_out generic map (bit_n+1) port map (clock, fwriter_enable, "../common/output.txt", add_sub_ABC_out);
-
 end architecture behaviour;

@@ -1,1 +1,60 @@
-# Loading project add_sub
+# ** Error: (vish-42) Unsupported ModelSim library format for "/home/matteo/git/tutoring_hkn/example-project/sim/work". (Format: 4)
+# ** Error: (vish-42) Unsupported ModelSim library format for "/home/matteo/git/tutoring_hkn/example-project/sim/work". (Format: 4)
+# Loading project sync_count_tb
+# reading /home/matteo/altera/13.0/modelsim_ase/linux/../modelsim.ini
+# Loading project example_project
+# Compile of add_sub_ABC.vhd failed with 1 errors.
+# Compile of add_sub_ABC_CU.vhd was successful.
+# Compile of add_sub_ABC_DP.vhd was successful.
+# Compile of adder_sub_beh.vhd was successful.
+# Compile of mux2.vhd was successful.
+# Compile of reg_n.vhd was successful.
+# Compile of add_sub_ABC_tb.vhd was successful.
+# Compile of add_sub_ABC_tb_CU.vhd was successful.
+# Compile of text_in.vhd was successful with warnings.
+# Compile of text_out.vhd was successful with warnings.
+# 10 compiles, 1 failed with 1 error. 
+# Compile of add_sub_ABC.vhd failed with 1 errors.
+# Compile of add_sub_ABC_CU.vhd was successful.
+# Compile of add_sub_ABC_DP.vhd was successful.
+# Compile of adder_sub_beh.vhd was successful.
+# Compile of mux2.vhd was successful.
+# Compile of reg_n.vhd was successful.
+# Compile of add_sub_ABC_tb.vhd was successful.
+# Compile of add_sub_ABC_tb_CU.vhd was successful.
+# Compile of text_in.vhd was successful with warnings.
+# Compile of text_out.vhd was successful with warnings.
+# 10 compiles, 1 failed with 1 error. 
+# Compile of add_sub_ABC.vhd was successful.
+# Compile of add_sub_ABC_CU.vhd was successful.
+# Compile of add_sub_ABC_DP.vhd was successful.
+# Compile of adder_sub_beh.vhd was successful.
+# Compile of mux2.vhd was successful.
+# Compile of reg_n.vhd was successful.
+# Compile of add_sub_ABC_tb.vhd was successful.
+# Compile of add_sub_ABC_tb_CU.vhd was successful.
+# Compile of text_in.vhd was successful with warnings.
+# Compile of text_out.vhd was successful with warnings.
+# 10 compiles, 0 failed with no errors. 
+vsim work.add_sub_abc_tb
+# vsim work.add_sub_abc_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.add_sub_abc_tb(behaviour)
+# ** Warning: (vsim-3473) Component instance "control_unit : CU_add_sub_ABC_tb" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /add_sub_abc_tb File: /home/matteo/git/tutoring_hkn/example-project/tb/add_sub_ABC_tb.vhd
+# Loading ieee.numeric_std(body)
+# Loading work.add_sub_abc(structure)
+# ** Error: (vsim-3732) /home/matteo/git/tutoring_hkn/example-project/tb/add_sub_ABC_tb.vhd(129): No default binding for component instance 'device'.
+#    The following component port is not on the entity:
+#           data_ready
+#         Region: /add_sub_abc_tb/device
+# Loading work.add_sub_abc_cu(behaviour)
+# Loading work.add_sub_abc_dp(behaviour)
+# Loading work.reg_n(behaviour)
+# Loading work.mux2(behaviour)
+# Loading work.adder_sub_beh(behaviour)
+# Loading work.text_in(behaviour)
+# Loading work.text_out(behaviour)
+# Error loading design

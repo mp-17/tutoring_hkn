@@ -97,8 +97,8 @@ architecture structure of add_sub_ABC is
 	en_regB,
 	en_regC,
 	en_regSum,
-	rst_n_regs,
-	rst_n_regSum,
+	clr_regs,
+	clr_regSum,
 	sel : std_logic;
 	
 begin
@@ -115,8 +115,8 @@ begin
 			en_regB => en_regB,
 			en_regC => en_regC,
 			en_regSum => en_regSum,
-			rst_n_regs => rst_n_regs,
-			rst_n_regSum => rst_n_regSum,
+			clr_regs => clr_regs,
+			clr_regSum => clr_regSum,
 			sel => sel,
 			done => done
 		);
@@ -127,9 +127,9 @@ begin
 	port map
 			(
 			clk => clk,
-			rst_n => rst_n
-			rst_n_regs => rst_n_regs,
-			rst_n_regSum => rst_n_regSum,
+			rst_n => rst_n,
+			clr_regs => clr_regs,
+			clr_regSum => clr_regSum,
 			en_regA => en_regA,
 			en_regB => en_regB,
 			en_regC => en_regC,
