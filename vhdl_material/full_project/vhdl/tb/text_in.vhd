@@ -29,7 +29,7 @@ architecture behaviour of text_in is
     signal linenumber: integer:=1;
 
 begin
-    reading_process: process(clock, enable)
+    reading_process: process
     file input_file: text open read_mode is file_name; -- the file
     variable file_status: File_open_status; -- to check wether the file is already open
     variable line_buffer: line; -- read buffer
@@ -38,21 +38,16 @@ begin
     variable read_data: bit_vector(bit_n-1 downto 0); -- The line read from the file
 
     begin
-        if(enable='1') then
+        while (not endfile(input_file)) loop
             if(clock'event and clock='1') then
-                if(not endfile(input_file)) then
-                    readline(input_file, line_buffer); -- Reads the next full line from the file
-                    read(line_buffer, read_data); -- Stores the first bit_n bits from the buffer into the output signal
-                else
-                    EOF:='1';
-                end if;
+                readline(input_file, line_buffer); -- Reads the next full line from the file
+                read(line_buffer, read_data); -- Stores the first bit_n bits from the buffer into the output signal
             end if;
-        end if;
+        end loop;
 
+        EOF := '1';
         done <= EOF;
         data <= to_stdlogicvector(read_data);
-
-        -- file_close(input_file);
 
     end process;
 

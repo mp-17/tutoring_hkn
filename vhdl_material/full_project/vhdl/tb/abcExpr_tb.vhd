@@ -56,6 +56,19 @@ component text_out is
     );
 end component;
 
+-- Register
+component reg is
+	generic ( n_bit: positive := 8 ); -- the parallelism of the signal lines
+	port ( clk,
+		   rst_n,
+	       en,
+	       clr: in std_logic; -- control signals
+
+	       d: in std_logic_vector(n_bit-1 downto 0); -- input signal
+
+           q: out std_logic_vector(n_bit-1 downto 0) ); -- output signal
+end component;
+
 ------------------------------- SIGNAL DECLARATION ----------------------------
 
 -- Parameters
@@ -82,6 +95,8 @@ signal aReader_en,
        aReader_done,
        bcReader_done: std_logic;
 signal outWriter_en,
+signal reader_a, 
+       reader_bc: std_logic_vector(nBitIn-1 downto 0);
        
        
 begin 
@@ -128,7 +143,7 @@ aReader: text_in
         enable <= aReader_en,
         file_name <= "../common/aInput.txt"
     -- OUTPUT SIGNALS
-        data <= DUT_a,
+        data <= reader_a,
         done <= aReader_done
     );
 aReader: text_in
@@ -141,8 +156,36 @@ aReader: text_in
         enable <= bcReader_en,
         file_name <= "../common/bcInput.txt"
     -- OUTPUT SIGNALS
-        data <= DUT_bc,
-        done <= open
+        data <= reader_bc,
+        done <= bcReader_done
+    );
+
+--------------------------- INPUT DATA REGISTERS-------------------------------
+a_reg: reg
+    generic map ( 
+        n_bit <= nBitIn 
+    )
+	port map ( 
+        clk <= clock,
+		rst_n <= reset_n,
+	    en <= '1',
+	    clr <= '0',
+	    d <= reader_a,
+
+        q <= DUT_a
+    );
+a_reg: reg
+    generic map ( 
+        n_bit <= nBitIn 
+    )
+	port map ( 
+        clk <= clock,
+		rst_n <= reset_n,
+	    en <= '1',
+	    clr <= '0',
+	    d <= reader_bc,
+
+        q <= DUT_bc
     );
     
 --------------------------- OUTPUT FILE WRITER --------------------------------
